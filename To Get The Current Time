@@ -1,0 +1,30 @@
+import java.util.*;
+public class Practice {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+	    long total_milliseconds = System.currentTimeMillis(); //the total milliseconds since midnight, Jan 1, 1970
+	    long total_seconds = total_milliseconds / 1000;        //the total seconds since midnight, Jan 1, 1970
+	    long current_second = total_seconds % 60;
+	    long total_minutes = total_seconds / 60;
+	    long current_minute = total_minutes % 60;
+	    long total_hours = total_minutes / 60;
+	    long currentHour = total_hours % 24;
+	    
+	    System.out.print("Is your time zone Positive Eg +2 GMT (Yes or No): ");
+	    String answer = input.nextLine();    //Allows you key in a string value
+	    
+	    if (answer.length() == 3) {           //Gets the length of "YES" which is equal to 3
+	    	System.out.print("Input your time zone:  +");  // Gets your time zone
+	    	int zone = input.nextInt();
+	    	long Hour = currentHour + zone;
+	    	System.out.print("Current time is " + Hour + ":" + current_minute + ":" + current_second + " GMT");	
+	    } else if (answer.length() == 2) {    //Gets the length of "NO" which is equal to 2
+	    	System.out.print("Input your time zone:  -");
+	    	int zone = input.nextInt();
+	    	long Hour = currentHour - zone;
+		    System.out.print("Current time is " + Hour + ":" + current_minute + ":" + current_second + " GMT");
+	    } else {
+	    	System.out.print("You didnt key in the (Yes or No), please restart the code");
+	    }
+	}
+} 
