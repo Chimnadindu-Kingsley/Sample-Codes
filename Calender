@@ -1,0 +1,146 @@
+//Write a program that prompts the user to enter the year and first day of the year and displays the calendar table for the year on the console. For example, if the user entered the year 2013, and 2 for Tuesday, January 1, 2013, your program should display the calendar for each month in the year
+import java.util.*;
+public class practice {
+
+	public static void main(String[] args) {
+		Scanner Input = new Scanner(System.in);
+		int year, startDay;
+		// Prompt the user to enter the year and start date
+		System.out.print("Enter the Year: ");
+			year = Input.nextInt();
+		System.out.print("Start Day \n(0=Sunday, 1=Monday, 2=Tuesday, 3=Wednessday, 4=Thursday, 5=Friday, 6=Saturday): ");
+			startDay = Input.nextInt();
+			int count = 0;
+			String monthInWords = "";
+				int numberOfDaysOfTheMonth;
+				System.out.println();
+				
+				/*Using a switch statement to iterate for 12 months.*/
+				for (int month = 1; month <= 12; month++) {
+								
+					//To get the month in words.
+					monthInWords = getMonthName(month);
+					
+					//To get the number of days of the month.
+					numberOfDaysOfTheMonth = getDaysOfTheMonth(month, year);
+					
+					//We print each month and the year given, and space the days of the week.
+					System.out.printf("%22s\n", monthInWords + ", " + year); 
+					System.out.println("____________________________");
+					System.out.printf("%4s%4s%4s%4s%4s%4s%4s\n", "Sun","Mon","Tue", "Wed", "Thu", "Fri", "Sat");
+					
+					//To print the spaces before the start of the day and count each spaces.
+					for(int i = 0; i < startDay; i++) { 
+						System.out.printf("%4s", ""); 
+						count++; 
+					}
+					for(int j = 1; j <= numberOfDaysOfTheMonth; j++) {
+						System.out.printf("%4d", j);
+						count++; 
+						if(count % 7 == 0) {
+							System.out.println(); 
+						}
+					}
+					
+					//To print 2 new line for proper spacing, after 7 lines have been reached
+					System.out.println(); 
+					System.out.println();
+					startDay = getStartDay(count); 
+					
+					//To reset the counter.
+					count = 0; 
+				} 	
+			} 
+			public static String getMonthName(int month) {
+				String monthName = "";
+					switch(month) {
+						case 1:
+							monthName = "January";
+							break;
+						case 2:
+							monthName = "February";
+							break;
+						case 3:
+							monthName = "March";
+							break;
+						case 4: 
+							monthName = "April";
+							break;
+						case 5:
+							monthName = "May";
+							break;
+						case 6:
+							monthName = "June";
+							break;
+						case 7:
+							monthName = "July";
+							break;
+						case 8:
+							monthName = "August";
+							break;
+						case 9:
+							monthName = "September";
+							break;
+						case 10:
+							monthName = "October";
+							break;
+						case 11:
+							monthName = "November";
+							break;
+						case 12:
+							monthName = "December";
+							break;
+					}
+				return monthName;
+			}
+			public static int getDaysOfTheMonth(int month, int years) {
+				int days = 0;
+					switch(month) {
+						case 1:
+							days = 31;
+							break;
+						case 2:
+							if(years % 400 == 0 || (years % 4 == 0 && years % 100 != 0)) {
+								days = 29;
+							} else {
+								days = 28;
+							}
+							break;
+						case 3:
+							days = 31;
+							break;
+						case 4:
+							days = 30;
+							break;
+						case 5:
+							days = 31;
+							break;
+						case 6:
+							days = 30;
+							break;
+						case 7:
+							days = 31;
+							break;
+						case 8:
+							days = 31;
+							break;
+						case 9: 
+							days = 30;
+							break;
+						case 10:
+							days = 31;
+							break;
+						case 11:
+							days = 30;
+							break;
+						case 12: 
+							days = 31;
+							break;
+					}
+				return days;
+			}
+			public static int getStartDay(int count) {
+				int start = (count % 7);
+				return start;
+			}
+	}
