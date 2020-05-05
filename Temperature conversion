@@ -1,0 +1,26 @@
+//Write a program that reads a Celsius degree in double from the console, then converts it to Fahrenheit and displays the result. The formula for the conversion is as follows:  fahrenheit = (9 / 5) * celsius + 32 
+
+import java.util.Scanner;
+public class practice {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Type 'Yes' if you want to convert from fahrenheit to celsuis, \n     'No' if you want to convert from celsuis to fahrenheit: ");
+		String value = input.nextLine();
+		
+		if (value.length() == 2) {
+		System.out.print("Input Celsius degree: ");
+			float Celsius = input.nextFloat();			
+		 float fahrenheit = ((9/5)*(Celsius+32));		 
+		 System.out.printf("Converting Celsius " + Celsius + " To Fahrenheit is " + fahrenheit);
+		} 
+		else if (value.length() == 3){
+			System.out.print("Input fahrenheit degree: ");
+			float fahrenheit = input.nextFloat();			
+		 float celsius = ((fahrenheit - 32) * 5/9);		 
+		 System.out.printf("Converting fahrenheit " + fahrenheit + " to Celsius is " +  "%.2f",celsius );
+		} else {
+			System.out.print("Restart the code and input (Yes or No)");
+		}
+	}
+
+}
