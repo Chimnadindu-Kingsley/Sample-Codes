@@ -1,0 +1,32 @@
+This project was designed with javafx application
+This project comprises of 2 main component:
+1. The FXMail2020.java
+2. The application.css
+
+All the styling for the javafx project was done in the "application.css" with background image to indicate originality
+
+The layout design of the project was done with
+1. GridPane:
+	This was used to hold the labels and textfield accordingly
+2. HBox:
+	This was used to hold the button, "btnQuit" and "btnSend", to get a horizontal alignment
+3. VBox:
+	This was used to hold the remaining component which are the "GridPane", "TextArea", "HBox" and "lblReady", to get a vertical aligment
+This project made use of 2 stage
+1. PrimaryStage:
+	This is the default stage for the application
+2. DisplayStage:
+	This stage that shows the contact list when the button "..." is clicked
+
+This project was done by Nwafor Kingsley and Aswin Gunasekarn
+
+The use of css file helped reduced complexity and length code that would have been used when styling each individual layout, button, etc.
+
+The FXMail2020 was designed in such a way it validates email typed in the textfield "To" and "From" when the "Send" button is clicked
+If the validation is false, it clears the text field for "To" and "From" and prompts a warning alert
+If the validation is true for both, a comfirmation alert pops up indicating sent.
+
+It uses a contact list view by clicking the "..." button, which displays a new stage to select contacts from by selecting the contact and click "ok" button
+
+The "Quit" button closes the application.
+

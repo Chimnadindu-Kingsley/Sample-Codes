@@ -1,0 +1,64 @@
+/*
+ * Nwafor Chimnadindu Kingsley 3017499 and Aswin Gunasekaran 3009902  * 
+ */
+/* general styling for the whole program */
+.root {
+	-fx-background-image: url("kingsley.jpg");
+	-fx-background-size: cover;
+	-fx-border-color: skyblue;
+	-fx-font-size:8pt; 
+	-fx-background-radius:5.0;		
+}
+
+/* Styling for the labels */
+.label {
+	-fx-text-fill: black;
+}
+
+/* Styling for the text field */
+.text-field {
+	-fx-background-color: lightblue;	
+	-fx-text-fill: black;	 
+	-fx-prompt-text-fill: gray;	 
+	-fx-highlight-fill:	red;	 
+}
+
+/* Styling for the text area */
+.text-area {
+	text-area-background: lightblue;
+		
+}
+
+.text-area .content {	
+	-fx-background-color: text-area-background;	
+}
+
+/* Styling for the list-view display */
+.list-view {
+	-fx-orientation: vertical;
+}
+
+/* Styling for the button */
+.button {
+	-fx-text-fill: dodgerblue;
+	-fx-background-color: red;
+}
+
+/* Styling for the GridPane */
+.gridpane {
+	-fx-padding: 10;
+	-fx-hgap: 10;	 	
+	-fx-vgap: 10;
+}
+
+/* Styling for the HBox */
+.hbox {
+	-fx-padding: 10;
+	-fx-spacing: 10;
+	-fx-alignment: baseline-right;
+}
+
+/* Styling for the VBox */
+.vbox {
+	-fx-padding: 10;
+}
