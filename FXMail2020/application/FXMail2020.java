@@ -1,5 +1,5 @@
 /*
- * Nwafor Chimnadindu Kingsley 3017499 and Aswin Gunasekaran 3009902  * 
+ * Nwafor Chimnadindu Kingsley * 
  */
 package application;
 
